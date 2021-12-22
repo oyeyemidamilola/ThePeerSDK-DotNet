@@ -4,9 +4,8 @@ using ThePeer.Interfaces;
 
 namespace ThePeer.Models
 {
-	internal class Transaction : IAuditable
+	public class Transaction :  Peerable, IId , IAuditable
 	{
-		[JsonProperty("id")]
 		public string Id { get; set; }
 
 		[JsonProperty("remark")]
@@ -21,7 +20,7 @@ namespace ThePeer.Models
 		[JsonProperty("status")]
 		public string Status { get; set; }
 
-		[JsonProperty("status")]
+		[JsonProperty("user")]
 		public User User { get; set; }
 
 		[JsonProperty("mode")]
@@ -32,9 +31,6 @@ namespace ThePeer.Models
 
 		[JsonProperty("reference")]
 		public string Reference { get; set; }
-
-		[JsonProperty("peer")]
-		public Peer Peer { get; set; }
 
 		public DateTime CreatedAt { get; set; }
 		public DateTime UpdatedAt { get; set; }

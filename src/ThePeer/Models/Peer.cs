@@ -2,7 +2,7 @@
 
 namespace ThePeer.Models
 {
-	internal class Peer
+	public class Peer
 	{
 		[JsonProperty("user")]
 		public User User { get; set; }

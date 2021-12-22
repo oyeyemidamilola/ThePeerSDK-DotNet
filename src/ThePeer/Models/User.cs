@@ -1,8 +1,10 @@
-﻿using Newtonsoft.Json;
+﻿using System;
+using Newtonsoft.Json;
+using ThePeer.Interfaces;
 
 namespace ThePeer.Models
 {
-	internal class User
+	public class User : IAuditable
 	{
 		[JsonProperty("name")]
 		public string Name { get; set; }
@@ -18,5 +20,8 @@ namespace ThePeer.Models
 
 		[JsonProperty("reference")]
 		public string Reference { get; set; }
+
+		public DateTime CreatedAt { get; set; }
+		public DateTime UpdatedAt { get; set; }
 	}
 }
